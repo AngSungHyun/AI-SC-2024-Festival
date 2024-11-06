@@ -79,7 +79,7 @@ print("base_queries: ", base_queries)
 print("forms: ", forms)
 print("===================================================\n\n")
 
-payloads = open("test.txt", "r").read().splitlines()
+payloads = open("payloads.txt", "r").read().splitlines()
 
 def scan_a_get(input_url, input_queries):
     for input_query in input_queries:
@@ -89,8 +89,8 @@ def scan_a_get(input_url, input_queries):
         base_time = time.time() - start_time
         print(f"{Fore.YELLOW}[info] Base response time for {input_url}{input_query}: {base_time:.2f} seconds{Style.RESET_ALL}")
         
-        # Set threshold (2 times the base response time)
-        threshold = max(2.0, base_time * 2)
+        # Set threshold (2.5 times the base response time)
+        threshold = max(3.0, base_time * 2.5)
         
         for payload in payloads:
             # print("query: ", input_query)
@@ -129,8 +129,8 @@ def scan_form_post(input_url, input_forms):
         base_time = time.time() - start_time
         print(f"{Fore.YELLOW}[info] Base response time ({input_url}{input_form['action']}): {base_time:.2f} seconds{Style.RESET_ALL}")
         
-        # Set threshold (2 times the base response time)
-        threshold = max(2.0, base_time * 2)
+        # Set threshold (2.5 times the base response time)
+        threshold = max(3.0, base_time * 2.5)
         
         for payload in payloads:
             datas = {
@@ -175,8 +175,8 @@ def scan_form_get(input_url, input_forms):
         base_time = time.time() - start_time
         print(f"{Fore.YELLOW}[info] Base response time ({test_url}): {base_time:.2f} seconds{Style.RESET_ALL}")
         
-        # Set threshold (2 times the base response time)
-        threshold = max(2.0, base_time * 2)
+        # Set threshold (2.5 times the base response time)
+        threshold = max(3.0, base_time * 2.5)
         
         for payload in payloads:
             # Generate query parameters with payload
