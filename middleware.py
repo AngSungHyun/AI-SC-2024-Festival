@@ -25,17 +25,40 @@ def extract_zip_files():
 def save_xss_results():
     temp = 'xss_module.py'
     # Run xss_module.py and capture its output
+    # result = subprocess.run(['pipenv', 'run', 'python3', temp], capture_output=True, text=True)
     result = subprocess.run(['python3', temp], capture_output=True, text=True)
     
     # Load JSON data from the output of xss_module.py
     try:
         xss_results = json.loads(result.stdout)
-        with open(output_json_file, 'w', encoding='utf-8') as f:
-            json.dump(xss_results, f, ensure_ascii=False, indent=4)
-        print(f"[*]정규표현식 검색 결과가 {output_json_file}에 저장되었습니다.")
+        return xss_results
     except json.JSONDecodeError:
-        print("[*]xss_module.py에서 유효한 JSON 데이터를 받지 못했습니다.")
+        print(f"[*]{temp}에서 유효한 JSON 데이터를 받지 못했습니다.")
+        return []
+
+def save_sqli_results():
+    temp = 'sqli_module.py'
+    # Run sqli_module.py and capture its output
+    # result = subprocess.run(['pipenv', 'run', 'python3', temp], capture_output=True, text=True)
+    result = subprocess.run(['python3', temp], capture_output=True, text=True)
+    
+    # Load JSON data from the output of sqli_module.py
+    try:
+        sqli_results = json.loads(result.stdout)
+        return sqli_results
+    except json.JSONDecodeError:
+        print(f"[*]{temp}에서 유효한 JSON 데이터를 받지 못했습니다.")
+        return []
 
 if __name__ == "__main__":
     extract_zip_files()
-    save_xss_results()
+    xss_results = save_xss_results()
+    sqli_results = save_sqli_results()
+    
+    # Combine results into a single list
+    combined_results = xss_results + sqli_results
+    
+    # Save combined results to JSON file
+    with open(output_json_file, 'w', encoding='utf-8') as f:
+        json.dump(combined_results, f, ensure_ascii=False, indent=4)
+    print(f"[*]XSS 및 SQLi 검색 결과가 {output_json_file}에 저장되었습니다.")

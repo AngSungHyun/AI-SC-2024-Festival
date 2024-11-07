@@ -1,26 +1,66 @@
 [
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/news.php",
+        "file_path": "./plugins/contact-form-7.6.0/contact-form-7/admin/includes/class-contact-forms-list-table.php",
+        "match": "<input type=\"text\"'\n\t\t\t\t. ' onfocus=\"this.select();\" readonly=\"readonly\"'\n\t\t\t\t. ' value=\"'"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/news.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"'"
     },
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/news.php",
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/news.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button\" value=\"'"
     },
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/ratings.php",
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/ratings.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-secondary\" value=\"'"
     },
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/ratings.php",
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/ratings.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-secondary\" value=\"'"
     },
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/ratings.php",
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/ratings.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button-link\" style=\"font-size: small;\" value=\"'"
     },
     {
-        "file_path": "./plugins/snippet-vault.0.2.6/snippet-vault/common/admin.php",
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/common/admin.php",
         "match": "<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button\" value=\"'"
+    },
+    {
+        "file_path": "./plugins/contact-form-7.6.0/contact-form-7/includes/contact-form.php",
+        "match": "$posts = $q->query( $args );"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/uninstall.php",
+        "match": "$wpdb->query( $sql );"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/discussions.php",
+        "match": "$this->wpdb->query( \"ALTER TABLE $this->table_chats ADD COLUMN title VARCHAR(64) NULL\" );"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/discussions.php",
+        "match": "SELECT * FROM {$this->table_chats} {$where_sql} {$"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/files.php",
+        "match": "$this->wpdb->query( \"ALTER TABLE $this->table_files ADD COLUMN userId BIGINT(20) UNSIGNED NULL\" );"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/files.php",
+        "match": "SELECT * FROM $this->table_files WHERE expires IS NOT NULL AND expires < '{$"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/files.php",
+        "match": "SELECT * FROM $this->table_filemeta WHERE file_id = %d\", $"
+    },
+    {
+        "file_path": "./plugins/ai-engine.2.6.6/ai-engine/classes/modules/files.php",
+        "match": "selectStar ? \"SELECT * FROM $this->table_files WHERE 1=1\" : \"SELECT COUNT(*) FROM $"
+    },
+    {
+        "file_path": "./plugins/classic-editor.1.6.5/classic-editor/classic-editor.php",
+        "match": "update_user_option( $user_id, 'classic-editor-settings', $"
     }
 ]
